@@ -16,44 +16,52 @@ public class QuizQuestions {
         switch (escolha) { // Aqui o programa faz com o que o usuario escolha um caso de 1 a 4.
             case 1 -> {
 
-                System.out.println("===== Quiz do Nino V.1.0 =====");
-                System.out.println("Questão 1");
-                System.out.println("Quantos são 2 + 2 ?");
-                System.out.println("A - 2");
-                System.out.println("B - 1");
-                System.out.println("C - 4");
-                System.out.println("D - 8");
-                String resp1 = sc.next();
 
-                if (resp1.equals("c")) { // if usado para somar os pontos do usuario em uma variavel, para posteriormente printar a soma na tela.
-                    pontos += 10;
-                }
+                String restart;
+                do {
 
-                System.out.println("Questão 2");
-                System.out.println("Quantos são 4 + 2 ?");
-                System.out.println("A - 2");
-                System.out.println("B - 1");
-                System.out.println("C - 6");
-                System.out.println("D - 8");
-                String resp2 = sc.next();
+                    System.out.println("===== Quiz do Nino V.1.0 =====");
+                    System.out.println("Questão 1");
+                    System.out.println("Quantos são 2 + 2 ?");
+                    System.out.println("A - 2");
+                    System.out.println("B - 1");
+                    System.out.println("C - 4");
+                    System.out.println("D - 8");
+                    String resp1 = sc.next();
 
-                if (resp2.equals("c")) {
-                    pontos += 10;
-                }
+                    if (resp1.equals("c")) { // if usado para somar os pontos do usuario em uma variavel, para posteriormente printar a soma na tela.
+                        pontos += 10;
+                    }
 
-                System.out.println("Questão 3");
-                System.out.println("Quantos são 8 + 2 ?");
-                System.out.println("A - 2");
-                System.out.println("B - 1");
-                System.out.println("C - 0");
-                System.out.println("D - 10");
-                String resp3 = sc.next();
+                    System.out.println("Questão 2");
+                    System.out.println("Quantos são 4 + 2 ?");
+                    System.out.println("A - 2");
+                    System.out.println("B - 1");
+                    System.out.println("C - 6");
+                    System.out.println("D - 8");
+                    String resp2 = sc.next();
 
-                if (resp3.equals("d")) {
-                    pontos += 10;
-                }
+                    if (resp2.equals("c")) {
+                        pontos += 10;
+                    }
 
-                System.out.println("Sua pontuação total: " + pontos);
+                    System.out.println("Questão 3");
+                    System.out.println("Quantos são 8 + 2 ?");
+                    System.out.println("A - 2");
+                    System.out.println("B - 1");
+                    System.out.println("C - 0");
+                    System.out.println("D - 10");
+                    String resp3 = sc.next();
+
+                    if (resp3.equals("d")) {
+                        pontos += 10;
+                    }
+
+                    System.out.println("Sua pontuação total: " + pontos);
+                    System.out.print("Deseja jogar novamente ? (s/n): ");
+                    restart = sc.next();
+
+                } while (restart.equals("s"));
 
             }
             case 2 -> {
@@ -69,6 +77,7 @@ public class QuizQuestions {
             case 4 -> System.out.println("Até a próxima");
             default -> System.out.println("Insira um valor válido para jogar");
         }
+        System.out.println("Obrigado por jogar :)");
         sc.close();
     }
 }
